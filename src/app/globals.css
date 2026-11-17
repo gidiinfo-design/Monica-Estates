@@ -59,18 +59,18 @@ body {
 
 /* ---- Gold Gradient Text ---- */
 .gradient-text-gold {
-  background: linear-gradient(135deg, #E6C879 0%, #C9A24B 50%, #9A7832 100%);
+  background: linear-gradient(135deg, #FFF1C5 0%, #F5D77A 35%, #E6C879 70%, #C9A24B 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
 }
 
 .text-glow-gold {
-  text-shadow: 0 0 20px rgba(201, 162, 75, 0.4), 0 0 40px rgba(201, 162, 75, 0.15);
+  text-shadow: 0 0 25px rgba(245, 215, 122, 0.6), 0 0 50px rgba(201, 162, 75, 0.35);
 }
 
 .shadow-glow-gold {
-  box-shadow: 0 0 30px rgba(201, 162, 75, 0.2), 0 0 60px rgba(201, 162, 75, 0.08);
+  box-shadow: 0 0 35px rgba(245, 215, 122, 0.25), 0 0 70px rgba(201, 162, 75, 0.12);
 }
 
 /* ---- Gold border glow ---- */
