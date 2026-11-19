@@ -268,9 +268,9 @@ export default function HeroSection() {
           </motion.p>
         </motion.div>
 
-        {/* Buildings — in front of text, overlapping ONLY the outermost edges of 'Monica Estates' */}
+        {/* Buildings — in front of text, inner towers cover just the M and s */}
         <motion.div
-          className="absolute left-0 bottom-0 w-[28%] sm:w-[26%] md:w-[24%] lg:w-[22%] h-[60%] md:h-[65%] z-20 pointer-events-none"
+          className="absolute left-0 bottom-0 w-1/2 h-[70%] z-20 pointer-events-none"
           style={
             prefersReducedMotion
               ? staticStyle
@@ -281,7 +281,7 @@ export default function HeroSection() {
         </motion.div>
 
         <motion.div
-          className="absolute right-0 bottom-0 w-[28%] sm:w-[26%] md:w-[24%] lg:w-[22%] h-[60%] md:h-[65%] z-20 pointer-events-none"
+          className="absolute right-0 bottom-0 w-1/2 h-[70%] z-20 pointer-events-none"
           style={
             prefersReducedMotion
               ? staticStyle
