@@ -74,53 +74,52 @@ function BuildingSkyline({ side }: { side: "left" | "right" }) {
           </linearGradient>
         </defs>
 
-        {/* 1. Tall outer tower (far left) */}
-        <rect x="25" y="30" width="65" height="320" fill="url(#bldg-grad-left)" stroke="#E6C879" strokeWidth="1.5" opacity="0.85" />
-        <line x1="57" y1="30" x2="57" y2="8" stroke="#E6C879" strokeWidth="1.2" opacity="0.8" />
-        <circle cx="57" cy="6" r="2" fill="#F5D77A" />
-        {[50, 85, 120, 155, 190, 225].map((y) => (
+        {/* 1. Tall outer tower (far left margin) */}
+        <rect x="15" y="30" width="65" height="320" fill="url(#bldg-grad-left)" stroke="#E6C879" strokeWidth="1.5" opacity="0.85" />
+        <line x1="47" y1="30" x2="47" y2="8" stroke="#E6C879" strokeWidth="1.2" opacity="0.8" />
+        <circle cx="47" cy="6" r="2" fill="#F5D77A" />
+        {[55, 95, 135, 175, 215].map((y) => (
           <g key={y}>
-            <rect x="33" y={y} width="12" height="18" fill="rgba(245, 215, 122, 0.3)" stroke="#F5D77A" strokeWidth="0.8" opacity="0.65" />
-            <rect x="51" y={y} width="12" height="18" fill="rgba(245, 215, 122, 0.3)" stroke="#F5D77A" strokeWidth="0.8" opacity="0.65" />
-            <rect x="69" y={y} width="12" height="18" fill="rgba(245, 215, 122, 0.3)" stroke="#F5D77A" strokeWidth="0.8" opacity="0.65" />
+            <rect x="23" y={y} width="12" height="18" fill="rgba(245, 215, 122, 0.3)" stroke="#F5D77A" strokeWidth="0.8" opacity="0.65" />
+            <rect x="41" y={y} width="12" height="18" fill="rgba(245, 215, 122, 0.3)" stroke="#F5D77A" strokeWidth="0.8" opacity="0.65" />
+            <rect x="59" y={y} width="12" height="18" fill="rgba(245, 215, 122, 0.3)" stroke="#F5D77A" strokeWidth="0.8" opacity="0.65" />
           </g>
         ))}
 
-        {/* 2. Medium commercial building */}
-        <rect x="105" y="115" width="85" height="235" fill="url(#bldg-grad-left)" stroke="#E6C879" strokeWidth="1.5" opacity="0.8" />
-        {[130, 165, 200, 235].map((y) => (
+        {/* 2. Commercial office block */}
+        <rect x="95" y="110" width="80" height="240" fill="url(#bldg-grad-left)" stroke="#E6C879" strokeWidth="1.5" opacity="0.8" />
+        {[130, 170, 210].map((y) => (
           <g key={y}>
-            <rect x="115" y={y} width="16" height="20" fill="rgba(245, 215, 122, 0.25)" stroke="#F5D77A" strokeWidth="0.8" opacity="0.6" />
-            <rect x="139" y={y} width="16" height="20" fill="rgba(245, 215, 122, 0.25)" stroke="#F5D77A" strokeWidth="0.8" opacity="0.6" />
-            <rect x="163" y={y} width="16" height="20" fill="rgba(245, 215, 122, 0.25)" stroke="#F5D77A" strokeWidth="0.8" opacity="0.6" />
+            <rect x="105" y={y} width="16" height="20" fill="rgba(245, 215, 122, 0.25)" stroke="#F5D77A" strokeWidth="0.8" opacity="0.6" />
+            <rect x="127" y={y} width="16" height="20" fill="rgba(245, 215, 122, 0.25)" stroke="#F5D77A" strokeWidth="0.8" opacity="0.6" />
+            <rect x="149" y={y} width="16" height="20" fill="rgba(245, 215, 122, 0.25)" stroke="#F5D77A" strokeWidth="0.8" opacity="0.6" />
           </g>
         ))}
 
         {/* 3. Mid stepped building */}
-        <rect x="205" y="160" width="75" height="190" fill="url(#bldg-grad-left)" stroke="#E6C879" strokeWidth="1.5" opacity="0.75" />
-        {[175, 210, 245].map((y) => (
+        <rect x="190" y="160" width="70" height="190" fill="url(#bldg-grad-left)" stroke="#E6C879" strokeWidth="1.5" opacity="0.75" />
+        {[180, 220].map((y) => (
           <g key={y}>
-            <rect x="215" y={y} width="13" height="18" fill="rgba(245, 215, 122, 0.25)" stroke="#F5D77A" strokeWidth="0.8" opacity="0.55" />
-            <rect x="236" y={y} width="13" height="18" fill="rgba(245, 215, 122, 0.25)" stroke="#F5D77A" strokeWidth="0.8" opacity="0.55" />
-            <rect x="257" y={y} width="13" height="18" fill="rgba(245, 215, 122, 0.25)" stroke="#F5D77A" strokeWidth="0.8" opacity="0.55" />
+            <rect x="200" y={y} width="13" height="18" fill="rgba(245, 215, 122, 0.25)" stroke="#F5D77A" strokeWidth="0.8" opacity="0.55" />
+            <rect x="219" y={y} width="13" height="18" fill="rgba(245, 215, 122, 0.25)" stroke="#F5D77A" strokeWidth="0.8" opacity="0.55" />
+            <rect x="238" y={y} width="13" height="18" fill="rgba(245, 215, 122, 0.25)" stroke="#F5D77A" strokeWidth="0.8" opacity="0.55" />
           </g>
         ))}
 
         {/* 4. Warehouse / factory with angled roof */}
-        <polygon points="285,350 285,220 305,190 325,220 325,350" fill="url(#bldg-grad-left)" stroke="#E6C879" strokeWidth="1.3" opacity="0.7" />
+        <polygon points="275,350 275,230 295,200 315,230 315,350" fill="url(#bldg-grad-left)" stroke="#E6C879" strokeWidth="1.3" opacity="0.7" />
 
-        {/* 5. INNER OVERLAP TOWER — covers a bit of the left edge of 'Monica Estates' */}
-        <rect x="330" y="75" width="65" height="275" fill="url(#bldg-grad-left)" stroke="#E6C879" strokeWidth="1.6" opacity="0.95" />
+        {/* 5. Innermost edge-overlapping slender tower (covers ONLY the outer tip of 'M') */}
+        <rect x="345" y="105" width="50" height="245" fill="url(#bldg-grad-left)" stroke="#E6C879" strokeWidth="1.6" opacity="0.95" />
         {/* Stepped top cap & spire */}
-        <rect x="342" y="55" width="41" height="20" fill="url(#bldg-grad-left)" stroke="#E6C879" strokeWidth="1.4" opacity="0.9" />
-        <line x1="362" y1="55" x2="362" y2="30" stroke="#F5D77A" strokeWidth="1.5" opacity="0.9" />
-        <circle cx="362" cy="28" r="2.5" fill="#F5D77A" />
-        {/* Glowing windows on the overlap tower */}
-        {[95, 130, 165, 200, 235].map((y) => (
+        <rect x="355" y="85" width="30" height="20" fill="url(#bldg-grad-left)" stroke="#E6C879" strokeWidth="1.4" opacity="0.9" />
+        <line x1="370" y1="85" x2="370" y2="55" stroke="#F5D77A" strokeWidth="1.5" opacity="0.9" />
+        <circle cx="370" cy="53" r="2.5" fill="#F5D77A" />
+        {/* Windows on the overlap tower */}
+        {[125, 165, 205, 245].map((y) => (
           <g key={y}>
-            <rect x="338" y={y} width="12" height="18" fill="rgba(245, 215, 122, 0.35)" stroke="#F5D77A" strokeWidth="0.8" opacity="0.7" />
-            <rect x="356" y={y} width="12" height="18" fill="rgba(245, 215, 122, 0.35)" stroke="#F5D77A" strokeWidth="0.8" opacity="0.7" />
-            <rect x="374" y={y} width="12" height="18" fill="rgba(245, 215, 122, 0.35)" stroke="#F5D77A" strokeWidth="0.8" opacity="0.7" />
+            <rect x="353" y={y} width="14" height="18" fill="rgba(245, 215, 122, 0.35)" stroke="#F5D77A" strokeWidth="0.8" opacity="0.7" />
+            <rect x="373" y={y} width="14" height="18" fill="rgba(245, 215, 122, 0.35)" stroke="#F5D77A" strokeWidth="0.8" opacity="0.7" />
           </g>
         ))}
       </svg>
@@ -136,53 +135,52 @@ function BuildingSkyline({ side }: { side: "left" | "right" }) {
         </linearGradient>
       </defs>
 
-      {/* 1. INNER OVERLAP TOWER — covers a bit of the right edge of 'Monica Estates' */}
-      <rect x="5" y="75" width="65" height="275" fill="url(#bldg-grad-right)" stroke="#E6C879" strokeWidth="1.6" opacity="0.95" />
+      {/* 1. Innermost edge-overlapping slender tower (covers ONLY the outer tip of 's') */}
+      <rect x="5" y="105" width="50" height="245" fill="url(#bldg-grad-right)" stroke="#E6C879" strokeWidth="1.6" opacity="0.95" />
       {/* Stepped top cap & spire */}
-      <rect x="17" y="55" width="41" height="20" fill="url(#bldg-grad-right)" stroke="#E6C879" strokeWidth="1.4" opacity="0.9" />
-      <line x1="37" y1="55" x2="37" y2="30" stroke="#F5D77A" strokeWidth="1.5" opacity="0.9" />
-      <circle cx="37" cy="28" r="2.5" fill="#F5D77A" />
-      {/* Glowing windows on the overlap tower */}
-      {[95, 130, 165, 200, 235].map((y) => (
+      <rect x="15" y="85" width="30" height="20" fill="url(#bldg-grad-right)" stroke="#E6C879" strokeWidth="1.4" opacity="0.9" />
+      <line x1="30" y1="85" x2="30" y2="55" stroke="#F5D77A" strokeWidth="1.5" opacity="0.9" />
+      <circle cx="30" cy="53" r="2.5" fill="#F5D77A" />
+      {/* Windows on the overlap tower */}
+      {[125, 165, 205, 245].map((y) => (
         <g key={y}>
-          <rect x="13" y={y} width="12" height="18" fill="rgba(245, 215, 122, 0.35)" stroke="#F5D77A" strokeWidth="0.8" opacity="0.7" />
-          <rect x="31" y={y} width="12" height="18" fill="rgba(245, 215, 122, 0.35)" stroke="#F5D77A" strokeWidth="0.8" opacity="0.7" />
-          <rect x="49" y={y} width="12" height="18" fill="rgba(245, 215, 122, 0.35)" stroke="#F5D77A" strokeWidth="0.8" opacity="0.7" />
+          <rect x="13" y={y} width="14" height="18" fill="rgba(245, 215, 122, 0.35)" stroke="#F5D77A" strokeWidth="0.8" opacity="0.7" />
+          <rect x="33" y={y} width="14" height="18" fill="rgba(245, 215, 122, 0.35)" stroke="#F5D77A" strokeWidth="0.8" opacity="0.7" />
         </g>
       ))}
 
       {/* 2. Warehouse / factory with angled roof */}
-      <polygon points="75,350 75,220 95,190 115,220 115,350" fill="url(#bldg-grad-right)" stroke="#E6C879" strokeWidth="1.3" opacity="0.7" />
+      <polygon points="85,350 85,230 105,200 125,230 125,350" fill="url(#bldg-grad-right)" stroke="#E6C879" strokeWidth="1.3" opacity="0.7" />
 
       {/* 3. Mid stepped building */}
-      <rect x="120" y="160" width="75" height="190" fill="url(#bldg-grad-right)" stroke="#E6C879" strokeWidth="1.5" opacity="0.75" />
-      {[175, 210, 245].map((y) => (
+      <rect x="140" y="160" width="70" height="190" fill="url(#bldg-grad-right)" stroke="#E6C879" strokeWidth="1.5" opacity="0.75" />
+      {[180, 220].map((y) => (
         <g key={y}>
-          <rect x="130" y={y} width="13" height="18" fill="rgba(245, 215, 122, 0.25)" stroke="#F5D77A" strokeWidth="0.8" opacity="0.55" />
-          <rect x="151" y={y} width="13" height="18" fill="rgba(245, 215, 122, 0.25)" stroke="#F5D77A" strokeWidth="0.8" opacity="0.55" />
-          <rect x="172" y={y} width="13" height="18" fill="rgba(245, 215, 122, 0.25)" stroke="#F5D77A" strokeWidth="0.8" opacity="0.55" />
+          <rect x="149" y={y} width="13" height="18" fill="rgba(245, 215, 122, 0.25)" stroke="#F5D77A" strokeWidth="0.8" opacity="0.55" />
+          <rect x="168" y={y} width="13" height="18" fill="rgba(245, 215, 122, 0.25)" stroke="#F5D77A" strokeWidth="0.8" opacity="0.55" />
+          <rect x="187" y={y} width="13" height="18" fill="rgba(245, 215, 122, 0.25)" stroke="#F5D77A" strokeWidth="0.8" opacity="0.55" />
         </g>
       ))}
 
-      {/* 4. Medium commercial building */}
-      <rect x="210" y="115" width="85" height="235" fill="url(#bldg-grad-right)" stroke="#E6C879" strokeWidth="1.5" opacity="0.8" />
-      {[130, 165, 200, 235].map((y) => (
+      {/* 4. Commercial office block */}
+      <rect x="225" y="110" width="80" height="240" fill="url(#bldg-grad-right)" stroke="#E6C879" strokeWidth="1.5" opacity="0.8" />
+      {[130, 170, 210].map((y) => (
         <g key={y}>
-          <rect x="220" y={y} width="16" height="20" fill="rgba(245, 215, 122, 0.25)" stroke="#F5D77A" strokeWidth="0.8" opacity="0.6" />
-          <rect x="244" y={y} width="16" height="20" fill="rgba(245, 215, 122, 0.25)" stroke="#F5D77A" strokeWidth="0.8" opacity="0.6" />
-          <rect x="268" y={y} width="16" height="20" fill="rgba(245, 215, 122, 0.25)" stroke="#F5D77A" strokeWidth="0.8" opacity="0.6" />
+          <rect x="235" y={y} width="16" height="20" fill="rgba(245, 215, 122, 0.25)" stroke="#F5D77A" strokeWidth="0.8" opacity="0.6" />
+          <rect x="257" y={y} width="16" height="20" fill="rgba(245, 215, 122, 0.25)" stroke="#F5D77A" strokeWidth="0.8" opacity="0.6" />
+          <rect x="279" y={y} width="16" height="20" fill="rgba(245, 215, 122, 0.25)" stroke="#F5D77A" strokeWidth="0.8" opacity="0.6" />
         </g>
       ))}
 
-      {/* 5. Tall outer tower (far right) */}
-      <rect x="310" y="30" width="65" height="320" fill="url(#bldg-grad-right)" stroke="#E6C879" strokeWidth="1.5" opacity="0.85" />
-      <line x1="342" y1="30" x2="342" y2="8" stroke="#E6C879" strokeWidth="1.2" opacity="0.8" />
-      <circle cx="342" cy="6" r="2" fill="#F5D77A" />
-      {[50, 85, 120, 155, 190, 225].map((y) => (
+      {/* 5. Tall outer tower (far right margin) */}
+      <rect x="320" y="30" width="65" height="320" fill="url(#bldg-grad-right)" stroke="#E6C879" strokeWidth="1.5" opacity="0.85" />
+      <line x1="352" y1="30" x2="352" y2="8" stroke="#E6C879" strokeWidth="1.2" opacity="0.8" />
+      <circle cx="352" cy="6" r="2" fill="#F5D77A" />
+      {[55, 95, 135, 175, 215].map((y) => (
         <g key={y}>
-          <rect x="318" y={y} width="12" height="18" fill="rgba(245, 215, 122, 0.3)" stroke="#F5D77A" strokeWidth="0.8" opacity="0.65" />
-          <rect x="336" y={y} width="12" height="18" fill="rgba(245, 215, 122, 0.3)" stroke="#F5D77A" strokeWidth="0.8" opacity="0.65" />
-          <rect x="354" y={y} width="12" height="18" fill="rgba(245, 215, 122, 0.3)" stroke="#F5D77A" strokeWidth="0.8" opacity="0.65" />
+          <rect x="328" y={y} width="12" height="18" fill="rgba(245, 215, 122, 0.3)" stroke="#F5D77A" strokeWidth="0.8" opacity="0.65" />
+          <rect x="346" y={y} width="12" height="18" fill="rgba(245, 215, 122, 0.3)" stroke="#F5D77A" strokeWidth="0.8" opacity="0.65" />
+          <rect x="364" y={y} width="12" height="18" fill="rgba(245, 215, 122, 0.3)" stroke="#F5D77A" strokeWidth="0.8" opacity="0.65" />
         </g>
       ))}
     </svg>
@@ -270,9 +268,9 @@ export default function HeroSection() {
           </motion.p>
         </motion.div>
 
-        {/* Buildings — in front of text, overlapping the outer edges of 'Monica Estates' */}
+        {/* Buildings — in front of text, overlapping ONLY the outermost edges of 'Monica Estates' */}
         <motion.div
-          className="absolute left-0 bottom-0 w-[53%] md:w-[51%] h-[72%] md:h-[76%] z-20 pointer-events-none"
+          className="absolute left-0 bottom-0 w-[28%] sm:w-[26%] md:w-[24%] lg:w-[22%] h-[60%] md:h-[65%] z-20 pointer-events-none"
           style={
             prefersReducedMotion
               ? staticStyle
@@ -283,7 +281,7 @@ export default function HeroSection() {
         </motion.div>
 
         <motion.div
-          className="absolute right-0 bottom-0 w-[53%] md:w-[51%] h-[72%] md:h-[76%] z-20 pointer-events-none"
+          className="absolute right-0 bottom-0 w-[28%] sm:w-[26%] md:w-[24%] lg:w-[22%] h-[60%] md:h-[65%] z-20 pointer-events-none"
           style={
             prefersReducedMotion
               ? staticStyle
