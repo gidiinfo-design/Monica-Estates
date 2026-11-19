@@ -3,7 +3,7 @@
 import { useRef } from "react";
 import { motion, useInView } from "framer-motion";
 import Image from "next/image";
-import { MessageCircle } from "lucide-react";
+import WhatsAppIcon from "@/components/UI/WhatsAppIcon";
 
 export default function DholeraSection() {
   const ref = useRef<HTMLElement>(null);
@@ -80,12 +80,12 @@ export default function DholeraSection() {
           transition={{ delay: 0.5, duration: 0.7 }}
         >
           <a
-            href="https://wa.me/919810013052?text=Hi%20Tushar%2C%20I%20am%20interested%20in%20Dholera%20properties."
+            href="https://wa.me/919891075222?text=Hi%20Tushar%2C%20I%20am%20interested%20in%20Dholera%20properties."
             target="_blank"
             rel="noopener noreferrer"
             className="btn-gold text-lg px-10 py-4 shadow-glow-gold"
           >
-            <MessageCircle size={20} />
+            <WhatsAppIcon size={22} />
             Enquire on WhatsApp
           </a>
         </motion.div>

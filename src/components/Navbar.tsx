@@ -3,6 +3,7 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X, Phone } from "lucide-react";
+import WhatsAppIcon from "@/components/UI/WhatsAppIcon";
 
 const navLinks = [
   { label: "Home", href: "#home" },
@@ -59,7 +60,7 @@ export default function Navbar() {
               </button>
             ))}
             <a
-              href="tel:+919810013052"
+              href="tel:+919891075222"
               className="btn-gold text-sm px-5 py-2"
             >
               <Phone size={14} />
@@ -70,7 +71,7 @@ export default function Navbar() {
           {/* Mobile hamburger */}
           <div className="flex items-center gap-3 md:hidden">
             <a
-              href="tel:+919810013052"
+              href="tel:+919891075222"
               className="btn-gold text-xs px-4 py-2"
             >
               <Phone size={12} />
@@ -113,18 +114,19 @@ export default function Navbar() {
 
               <div className="pt-4 border-t border-gold/20 flex flex-col gap-3">
                 <a
-                  href="tel:+919810013052"
-                  className="btn-gold text-center justify-center"
+                  href="tel:+919891075222"
+                  className="btn-gold text-center justify-center gap-2"
                 >
                   <Phone size={16} />
-                  +91 98100 13052
+                  +91 98910 75222
                 </a>
                 <a
-                  href="https://wa.me/919810013052"
+                  href="https://wa.me/919891075222"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="btn-gold-outline text-center justify-center"
+                  className="btn-gold-outline text-center justify-center gap-2"
                 >
+                  <WhatsAppIcon size={18} />
                   WhatsApp
                 </a>
               </div>

@@ -3,7 +3,8 @@
 import { useRef } from "react";
 import { motion, useInView } from "framer-motion";
 import Image from "next/image";
-import { Phone, MessageCircle } from "lucide-react";
+import { Phone } from "lucide-react";
+import WhatsAppIcon from "@/components/UI/WhatsAppIcon";
 
 export default function ContactSection() {
   const ref = useRef<HTMLElement>(null);
@@ -33,53 +34,24 @@ export default function ContactSection() {
           </p>
         </motion.div>
 
-        {/* Contact buttons */}
+        {/* Contact button card */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ delay: 0.3, duration: 0.6 }}
-          className="grid grid-cols-1 sm:grid-cols-2 gap-6 max-w-2xl mx-auto mb-12"
+          className="max-w-md mx-auto mb-12"
         >
-          {/* Phone 1 */}
           <div className="glass-panel rounded-2xl p-6 text-center hover-lift">
             <p className="text-muted text-xs uppercase tracking-widest mb-3 font-display">
               Call or WhatsApp
             </p>
-            <p className="text-gold-light font-display text-lg font-semibold mb-4">
-              +91 98100 13052
-            </p>
-            <div className="flex gap-3 justify-center">
-              <a
-                href="tel:+919810013052"
-                className="btn-gold text-sm px-5 py-2.5"
-              >
-                <Phone size={16} />
-                Call
-              </a>
-              <a
-                href="https://wa.me/919810013052"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="btn-gold-outline text-sm px-5 py-2.5"
-              >
-                <MessageCircle size={16} />
-                WhatsApp
-              </a>
-            </div>
-          </div>
-
-          {/* Phone 2 */}
-          <div className="glass-panel rounded-2xl p-6 text-center hover-lift">
-            <p className="text-muted text-xs uppercase tracking-widest mb-3 font-display">
-              Call or WhatsApp
-            </p>
-            <p className="text-gold-light font-display text-lg font-semibold mb-4">
+            <p className="text-gold-light font-display text-xl font-semibold mb-4">
               +91 98910 75222
             </p>
-            <div className="flex gap-3 justify-center">
+            <div className="flex gap-4 justify-center">
               <a
                 href="tel:+919891075222"
-                className="btn-gold text-sm px-5 py-2.5"
+                className="btn-gold text-sm px-6 py-2.5"
               >
                 <Phone size={16} />
                 Call
@@ -88,9 +60,9 @@ export default function ContactSection() {
                 href="https://wa.me/919891075222"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="btn-gold-outline text-sm px-5 py-2.5"
+                className="btn-gold-outline text-sm px-6 py-2.5"
               >
-                <MessageCircle size={16} />
+                <WhatsAppIcon size={16} />
                 WhatsApp
               </a>
             </div>

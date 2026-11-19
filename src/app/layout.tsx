@@ -74,7 +74,7 @@ export default function RootLayout({
               description:
                 "Industrial and institutional real estate agents in Noida, Greater Noida, Yamuna Expressway and Dholera. 44 years of Clients First.",
               url: "https://monica-estates.vercel.app",
-              telephone: ["+919810013052", "+919891075222"],
+              telephone: "+919891075222",
               founder: {
                 "@type": "Person",
                 name: "Tushar Dewan",

@@ -57,14 +57,11 @@ export default function Footer() {
               Contact
             </h4>
             <div className="space-y-2 text-sm text-muted">
-              <a href="tel:+919810013052" className="block hover:text-gold transition-colors">
-                +91 98100 13052
-              </a>
               <a href="tel:+919891075222" className="block hover:text-gold transition-colors">
                 +91 98910 75222
               </a>
               <a
-                href="https://wa.me/919810013052"
+                href="https://wa.me/919891075222"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="block hover:text-gold transition-colors"
