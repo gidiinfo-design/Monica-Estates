@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
-import { Phone, Clock, ArrowRight } from "lucide-react";
+import { Phone, Clock } from "lucide-react";
 import WhatsAppIcon from "@/components/UI/WhatsAppIcon";
 
 // Target launch: 21 November 2026 12:00 AM IST (Midnight)
@@ -30,11 +30,7 @@ function getTimeRemaining(): TimeRemaining {
   return { days, hours, minutes, seconds, isLaunched: false };
 }
 
-export default function LaunchPage({
-  onPreview,
-}: {
-  onPreview?: () => void;
-}) {
+export default function LaunchPage() {
   const [timeLeft, setTimeLeft] = useState<TimeRemaining>({
     days: 0,
     hours: 0,
@@ -83,20 +79,10 @@ export default function LaunchPage({
       </div>
 
       {/* Top bar */}
-      <header className="relative z-10 flex justify-between items-center max-w-6xl mx-auto w-full">
+      <header className="relative z-10 flex justify-center items-center max-w-6xl mx-auto w-full text-center">
         <p className="font-display text-xs md:text-sm tracking-[0.3em] uppercase text-gold font-semibold drop-shadow-[0_0_10px_rgba(245,215,122,0.5)]">
           44 Years of Clients First · Est. 1982
         </p>
-
-        {onPreview && (
-          <button
-            onClick={onPreview}
-            className="text-xs text-muted hover:text-gold transition-colors flex items-center gap-1.5 px-3 py-1.5 rounded-full border border-gold/20 hover:border-gold/50 cursor-pointer"
-          >
-            <span>Preview Site</span>
-            <ArrowRight size={12} />
-          </button>
-        )}
       </header>
 
       {/* Center content */}
@@ -182,3 +168,4 @@ export default function LaunchPage({
     </div>
   );
 }
+

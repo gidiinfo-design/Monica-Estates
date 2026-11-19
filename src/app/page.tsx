@@ -67,22 +67,10 @@ const ContactSection = dynamic(() => import("@/components/ContactSection"), {
 
 export default function Home() {
   const [isLaunched, setIsLaunched] = useState(false);
-  const [preview, setPreview] = useState(false);
   const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
     setMounted(true);
-
-    // Check for preview parameter in URL or local storage
-    if (typeof window !== "undefined") {
-      const urlParams = new URLSearchParams(window.location.search);
-      if (
-        urlParams.get("preview") === "true" ||
-        localStorage.getItem("monica_preview") === "true"
-      ) {
-        setPreview(true);
-      }
-    }
 
     const checkLaunch = () => {
       if (Date.now() >= LAUNCH_DATE_TIMESTAMP) {
@@ -95,48 +83,21 @@ export default function Home() {
     return () => clearInterval(interval);
   }, []);
 
-  // During pre-launch (before Nov 21 12:00 AM IST) and when not in preview mode, show LaunchPage
+  // During pre-launch (before Nov 21 12:00 AM IST), show LaunchPage
   if (!mounted) {
     return <div className="min-h-screen bg-bg-primary" />;
   }
 
-  if (!isLaunched && !preview) {
-    return (
-      <LaunchPage
-        onPreview={() => {
-          setPreview(true);
-          try {
-            localStorage.setItem("monica_preview", "true");
-          } catch {}
-        }}
-      />
-    );
+  if (!isLaunched) {
+    return <LaunchPage />;
   }
 
   return (
     <>
-      {/* Discreet preview mode banner */}
-      {!isLaunched && preview && (
-        <div className="fixed top-0 left-0 right-0 z-[60] bg-gold/90 text-bg-primary text-xs font-display font-semibold py-1 px-4 text-center flex items-center justify-center gap-3 backdrop-blur-md shadow-md">
-          <span>Viewing in Owner Preview Mode · Official Launch on 21 November 12:00 AM</span>
-          <button
-            onClick={() => {
-              setPreview(false);
-              try {
-                localStorage.removeItem("monica_preview");
-              } catch {}
-            }}
-            className="underline cursor-pointer hover:text-black transition-colors"
-          >
-            Show Launch Screen
-          </button>
-        </div>
-      )}
-
       <Navbar />
       <FloatingWhatsApp />
 
-      <main className={`flex flex-col ${!isLaunched && preview ? "pt-6" : ""}`}>
+      <main className="flex flex-col">
         {/* 1. Hero */}
         <HeroSection />
 

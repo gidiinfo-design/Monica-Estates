@@ -23,3 +23,4 @@ export function WhatsAppIcon({
 }
 
 export default WhatsAppIcon;
+
