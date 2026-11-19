@@ -96,30 +96,27 @@ function BuildingSkyline({ side }: { side: "left" | "right" }) {
           </g>
         ))}
 
-        {/* 3. Mid stepped building */}
-        <rect x="190" y="160" width="70" height="190" fill="url(#bldg-grad-left)" stroke="#E6C879" strokeWidth="1.5" opacity="0.75" />
-        {[180, 220].map((y) => (
+        {/* 3. Tall tower with spire (moved here — 2 buildings from centre) */}
+        <rect x="200" y="105" width="50" height="245" fill="url(#bldg-grad-left)" stroke="#E6C879" strokeWidth="1.6" opacity="0.95" />
+        <rect x="210" y="85" width="30" height="20" fill="url(#bldg-grad-left)" stroke="#E6C879" strokeWidth="1.4" opacity="0.9" />
+        <line x1="225" y1="85" x2="225" y2="55" stroke="#F5D77A" strokeWidth="1.5" opacity="0.9" />
+        <circle cx="225" cy="53" r="2.5" fill="#F5D77A" />
+        {[125, 165, 205, 245].map((y) => (
           <g key={y}>
-            <rect x="200" y={y} width="13" height="18" fill="rgba(245, 215, 122, 0.25)" stroke="#F5D77A" strokeWidth="0.8" opacity="0.55" />
-            <rect x="219" y={y} width="13" height="18" fill="rgba(245, 215, 122, 0.25)" stroke="#F5D77A" strokeWidth="0.8" opacity="0.55" />
-            <rect x="238" y={y} width="13" height="18" fill="rgba(245, 215, 122, 0.25)" stroke="#F5D77A" strokeWidth="0.8" opacity="0.55" />
+            <rect x="208" y={y} width="14" height="18" fill="rgba(245, 215, 122, 0.35)" stroke="#F5D77A" strokeWidth="0.8" opacity="0.7" />
+            <rect x="228" y={y} width="14" height="18" fill="rgba(245, 215, 122, 0.35)" stroke="#F5D77A" strokeWidth="0.8" opacity="0.7" />
           </g>
         ))}
 
         {/* 4. Warehouse / factory with angled roof */}
         <polygon points="275,350 275,230 295,200 315,230 315,350" fill="url(#bldg-grad-left)" stroke="#E6C879" strokeWidth="1.3" opacity="0.7" />
 
-        {/* 5. Innermost edge-overlapping slender tower (covers ONLY the outer tip of 'M') */}
-        <rect x="345" y="105" width="50" height="245" fill="url(#bldg-grad-left)" stroke="#E6C879" strokeWidth="1.6" opacity="0.95" />
-        {/* Stepped top cap & spire */}
-        <rect x="355" y="85" width="30" height="20" fill="url(#bldg-grad-left)" stroke="#E6C879" strokeWidth="1.4" opacity="0.9" />
-        <line x1="370" y1="85" x2="370" y2="55" stroke="#F5D77A" strokeWidth="1.5" opacity="0.9" />
-        <circle cx="370" cy="53" r="2.5" fill="#F5D77A" />
-        {/* Windows on the overlap tower */}
-        {[125, 165, 205, 245].map((y) => (
+        {/* 5. Innermost short building (covers just the edge of 'M') */}
+        <rect x="345" y="180" width="50" height="170" fill="url(#bldg-grad-left)" stroke="#E6C879" strokeWidth="1.5" opacity="0.85" />
+        {[200, 240, 280].map((y) => (
           <g key={y}>
-            <rect x="353" y={y} width="14" height="18" fill="rgba(245, 215, 122, 0.35)" stroke="#F5D77A" strokeWidth="0.8" opacity="0.7" />
-            <rect x="373" y={y} width="14" height="18" fill="rgba(245, 215, 122, 0.35)" stroke="#F5D77A" strokeWidth="0.8" opacity="0.7" />
+            <rect x="353" y={y} width="13" height="18" fill="rgba(245, 215, 122, 0.25)" stroke="#F5D77A" strokeWidth="0.8" opacity="0.6" />
+            <rect x="372" y={y} width="13" height="18" fill="rgba(245, 215, 122, 0.25)" stroke="#F5D77A" strokeWidth="0.8" opacity="0.6" />
           </g>
         ))}
       </svg>
@@ -135,30 +132,27 @@ function BuildingSkyline({ side }: { side: "left" | "right" }) {
         </linearGradient>
       </defs>
 
-      {/* 1. Innermost edge-overlapping slender tower (covers ONLY the outer tip of 's') */}
-      <rect x="5" y="105" width="50" height="245" fill="url(#bldg-grad-right)" stroke="#E6C879" strokeWidth="1.6" opacity="0.95" />
-      {/* Stepped top cap & spire */}
-      <rect x="15" y="85" width="30" height="20" fill="url(#bldg-grad-right)" stroke="#E6C879" strokeWidth="1.4" opacity="0.9" />
-      <line x1="30" y1="85" x2="30" y2="55" stroke="#F5D77A" strokeWidth="1.5" opacity="0.9" />
-      <circle cx="30" cy="53" r="2.5" fill="#F5D77A" />
-      {/* Windows on the overlap tower */}
-      {[125, 165, 205, 245].map((y) => (
+      {/* 1. Innermost short building (covers just the edge of 's') */}
+      <rect x="5" y="180" width="50" height="170" fill="url(#bldg-grad-right)" stroke="#E6C879" strokeWidth="1.5" opacity="0.85" />
+      {[200, 240, 280].map((y) => (
         <g key={y}>
-          <rect x="13" y={y} width="14" height="18" fill="rgba(245, 215, 122, 0.35)" stroke="#F5D77A" strokeWidth="0.8" opacity="0.7" />
-          <rect x="33" y={y} width="14" height="18" fill="rgba(245, 215, 122, 0.35)" stroke="#F5D77A" strokeWidth="0.8" opacity="0.7" />
+          <rect x="13" y={y} width="13" height="18" fill="rgba(245, 215, 122, 0.25)" stroke="#F5D77A" strokeWidth="0.8" opacity="0.6" />
+          <rect x="32" y={y} width="13" height="18" fill="rgba(245, 215, 122, 0.25)" stroke="#F5D77A" strokeWidth="0.8" opacity="0.6" />
         </g>
       ))}
 
       {/* 2. Warehouse / factory with angled roof */}
       <polygon points="85,350 85,230 105,200 125,230 125,350" fill="url(#bldg-grad-right)" stroke="#E6C879" strokeWidth="1.3" opacity="0.7" />
 
-      {/* 3. Mid stepped building */}
-      <rect x="140" y="160" width="70" height="190" fill="url(#bldg-grad-right)" stroke="#E6C879" strokeWidth="1.5" opacity="0.75" />
-      {[180, 220].map((y) => (
+      {/* 3. Tall tower with spire (moved here — 2 buildings from centre) */}
+      <rect x="150" y="105" width="50" height="245" fill="url(#bldg-grad-right)" stroke="#E6C879" strokeWidth="1.6" opacity="0.95" />
+      <rect x="160" y="85" width="30" height="20" fill="url(#bldg-grad-right)" stroke="#E6C879" strokeWidth="1.4" opacity="0.9" />
+      <line x1="175" y1="85" x2="175" y2="55" stroke="#F5D77A" strokeWidth="1.5" opacity="0.9" />
+      <circle cx="175" cy="53" r="2.5" fill="#F5D77A" />
+      {[125, 165, 205, 245].map((y) => (
         <g key={y}>
-          <rect x="149" y={y} width="13" height="18" fill="rgba(245, 215, 122, 0.25)" stroke="#F5D77A" strokeWidth="0.8" opacity="0.55" />
-          <rect x="168" y={y} width="13" height="18" fill="rgba(245, 215, 122, 0.25)" stroke="#F5D77A" strokeWidth="0.8" opacity="0.55" />
-          <rect x="187" y={y} width="13" height="18" fill="rgba(245, 215, 122, 0.25)" stroke="#F5D77A" strokeWidth="0.8" opacity="0.55" />
+          <rect x="158" y={y} width="14" height="18" fill="rgba(245, 215, 122, 0.35)" stroke="#F5D77A" strokeWidth="0.8" opacity="0.7" />
+          <rect x="178" y={y} width="14" height="18" fill="rgba(245, 215, 122, 0.35)" stroke="#F5D77A" strokeWidth="0.8" opacity="0.7" />
         </g>
       ))}
 
