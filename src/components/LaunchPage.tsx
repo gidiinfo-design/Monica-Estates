@@ -61,11 +61,9 @@ export default function LaunchPage({
       if (remaining.isLaunched) {
         setCelebrating(true);
         clearInterval(timer);
-        setTimeout(() => {
-          onLaunch?.();
-        }, 1500);
+        onLaunch?.();
       }
-    }, 1000);
+    }, 500);
 
     return () => clearInterval(timer);
   }, [onLaunch]);

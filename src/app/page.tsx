@@ -94,7 +94,7 @@ export default function Home() {
     };
 
     checkLaunch();
-    const interval = setInterval(checkLaunch, 1000);
+    const interval = setInterval(checkLaunch, 500);
     return () => clearInterval(interval);
   }, []);
 
