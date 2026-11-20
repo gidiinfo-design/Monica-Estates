@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { Phone, Clock } from "lucide-react";
 import WhatsAppIcon from "@/components/UI/WhatsAppIcon";
+import BalloonsAndConfetti from "@/components/BalloonsAndConfetti";
 
 // Target launch: 21 November 2026 12:00 AM IST (Midnight)
 export const LAUNCH_DATE_TIMESTAMP = new Date("2026-11-21T00:00:00+05:30").getTime();
@@ -30,7 +31,11 @@ function getTimeRemaining(): TimeRemaining {
   return { days, hours, minutes, seconds, isLaunched: false };
 }
 
-export default function LaunchPage() {
+export default function LaunchPage({
+  onLaunch,
+}: {
+  onLaunch?: () => void;
+} = {}) {
   const [timeLeft, setTimeLeft] = useState<TimeRemaining>({
     days: 0,
     hours: 0,
@@ -39,21 +44,35 @@ export default function LaunchPage() {
     isLaunched: false,
   });
   const [mounted, setMounted] = useState(false);
+  const [celebrating, setCelebrating] = useState(false);
 
   useEffect(() => {
     setMounted(true);
-    setTimeLeft(getTimeRemaining());
+    const initial = getTimeRemaining();
+    setTimeLeft(initial);
+    if (initial.isLaunched) {
+      setCelebrating(true);
+      onLaunch?.();
+    }
 
     const timer = setInterval(() => {
       const remaining = getTimeRemaining();
       setTimeLeft(remaining);
+      if (remaining.isLaunched) {
+        setCelebrating(true);
+        clearInterval(timer);
+        setTimeout(() => {
+          onLaunch?.();
+        }, 1500);
+      }
     }, 1000);
 
     return () => clearInterval(timer);
-  }, []);
+  }, [onLaunch]);
 
   return (
     <div className="relative min-h-screen w-full bg-bg-primary text-off-white overflow-hidden flex flex-col justify-between p-6 md:p-12">
+      {celebrating && <BalloonsAndConfetti />}
       {/* Background ambient gold lights */}
       <div className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[500px] bg-gradient-to-b from-gold/20 via-gold/5 to-transparent rounded-full blur-[140px] pointer-events-none" />
       <div className="absolute bottom-1/4 left-1/2 -translate-x-1/2 w-[500px] h-[400px] bg-gold-bright/15 rounded-full blur-[120px] pointer-events-none" />
@@ -102,7 +121,9 @@ export default function LaunchPage() {
           <div className="inline-flex items-center gap-2.5 px-5 py-2 rounded-full bg-gold/10 border border-gold/30 backdrop-blur-md shadow-[0_0_20px_rgba(201,162,75,0.2)]">
             <Clock size={16} className="text-gold-bright animate-pulse" />
             <span className="font-display text-sm md:text-base font-semibold tracking-wider uppercase text-gold-bright">
-              Website to launch on 21 November · 12:00 AM
+              {timeLeft.isLaunched
+                ? "Official Launch · We Are Live!"
+                : "Website to launch on 21 November · 12:00 AM"}
             </span>
           </div>
 

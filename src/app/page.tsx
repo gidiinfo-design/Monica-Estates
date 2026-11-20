@@ -6,6 +6,7 @@ import Navbar from "@/components/Navbar";
 import FloatingWhatsApp from "@/components/FloatingWhatsApp";
 import Footer from "@/components/Footer";
 import LaunchPage, { LAUNCH_DATE_TIMESTAMP } from "@/components/LaunchPage";
+import BalloonsAndConfetti from "@/components/BalloonsAndConfetti";
 
 // Dynamic imports for client components with animations
 const HeroSection = dynamic(() => import("@/components/HeroSection"), {
@@ -67,14 +68,28 @@ const ContactSection = dynamic(() => import("@/components/ContactSection"), {
 
 export default function Home() {
   const [isLaunched, setIsLaunched] = useState(false);
+  const [showCelebration, setShowCelebration] = useState(false);
   const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
     setMounted(true);
 
     const checkLaunch = () => {
-      if (Date.now() >= LAUNCH_DATE_TIMESTAMP) {
+      const now = Date.now();
+      const urlParams =
+        typeof window !== "undefined"
+          ? new URLSearchParams(window.location.search)
+          : null;
+      const forceCelebrate = urlParams?.get("celebrate") === "true";
+
+      if (now >= LAUNCH_DATE_TIMESTAMP || forceCelebrate) {
         setIsLaunched(true);
+        // Show celebration during initial launch window (first 48h) or if testing with ?celebrate=true
+        const isRecentLaunch =
+          now < LAUNCH_DATE_TIMESTAMP + 48 * 60 * 60 * 1000;
+        if (isRecentLaunch || forceCelebrate) {
+          setShowCelebration(true);
+        }
       }
     };
 
@@ -89,11 +104,21 @@ export default function Home() {
   }
 
   if (!isLaunched) {
-    return <LaunchPage />;
+    return (
+      <LaunchPage
+        onLaunch={() => {
+          setIsLaunched(true);
+          setShowCelebration(true);
+        }}
+      />
+    );
   }
 
   return (
     <>
+      {showCelebration && (
+        <BalloonsAndConfetti onDismiss={() => setShowCelebration(false)} />
+      )}
       <Navbar />
       <FloatingWhatsApp />
 
