@@ -2,18 +2,30 @@
 
 import { useRef } from "react";
 import { motion, useInView } from "framer-motion";
+import {
+  GraduationCap,
+  Car,
+  Shirt,
+  Zap,
+  FlaskConical,
+  Package,
+  Factory,
+  Building2,
+  Cpu,
+  Cog,
+} from "lucide-react";
 
-const clients = [
-  { name: "Vigsons Automobile", desc: "Mahindra and Mahindra car agent" },
-  { name: "Phoenix Design", desc: "Garment export company" },
-  { name: "Gaurav Electrics", desc: "Switches and lights manufacturing" },
-  { name: "Kapoor Industries", desc: "Electrical manufacturing" },
-  { name: "Bhatia Acids Pvt Ltd", desc: "Chemical manufacturing" },
-  { name: "Prism Offset", desc: "Corrugated boxes manufacturing" },
-  { name: "Sapphire International School", desc: "School, Noida" },
-  { name: "Bodycare International", desc: "Garment manufacturing" },
-  { name: "AKG Steel", desc: "Conduits manufacturing" },
-  { name: "Shri Sidhi Vinayak Industries", desc: "Plastic moulders" },
+const clientCategories = [
+  { category: "School", icon: GraduationCap },
+  { category: "Automobile Dealership", icon: Car },
+  { category: "Garment Export", icon: Shirt },
+  { category: "Switches & Lighting", icon: Zap },
+  { category: "Electrical Manufacturing", icon: Cpu },
+  { category: "Chemical Manufacturing", icon: FlaskConical },
+  { category: "Packaging & Corrugated Boxes", icon: Package },
+  { category: "Garment Manufacturing", icon: Factory },
+  { category: "Steel Conduits Manufacturing", icon: Building2 },
+  { category: "Plastic Moulding", icon: Cog },
 ];
 
 export default function RecentClientsSection() {
@@ -46,35 +58,47 @@ export default function RecentClientsSection() {
 
           <div className="flex animate-marquee">
             {/* Double the items for seamless loop */}
-            {[...clients, ...clients].map((client, i) => (
-              <div
-                key={`${client.name}-${i}`}
-                className="shrink-0 mx-3 md:mx-4"
-              >
-                <div className="glass-panel rounded-xl px-6 py-5 w-64 md:w-72 hover-lift">
-                  <h4 className="font-display text-base md:text-lg font-semibold text-gold-light mb-1 truncate">
-                    {client.name}
-                  </h4>
-                  <p className="text-muted text-xs md:text-sm truncate">{client.desc}</p>
+            {[...clientCategories, ...clientCategories].map((client, i) => {
+              const Icon = client.icon;
+              return (
+                <div
+                  key={`${client.category}-${i}`}
+                  className="shrink-0 mx-3 md:mx-4"
+                >
+                  <div className="glass-panel rounded-xl px-5 py-4 w-60 md:w-64 hover-lift flex items-center gap-3.5 border border-gold/20">
+                    <div className="w-10 h-10 rounded-lg bg-gold/10 border border-gold/25 flex items-center justify-center shrink-0">
+                      <Icon size={18} className="text-gold" />
+                    </div>
+                    <h4 className="font-display text-sm md:text-base font-semibold text-gold-light leading-snug">
+                      {client.category}
+                    </h4>
+                  </div>
                 </div>
-              </div>
-            ))}
+              );
+            })}
           </div>
         </div>
 
         {/* Also show as static grid on mobile for accessibility */}
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-12 md:hidden">
-          {clients.map((client) => (
-            <div key={client.name} className="glass-panel rounded-xl px-5 py-4">
-              <h4 className="font-display text-sm font-semibold text-gold-light mb-1">
-                {client.name}
-              </h4>
-              <p className="text-muted text-xs">{client.desc}</p>
-            </div>
-          ))}
+          {clientCategories.map((client) => {
+            const Icon = client.icon;
+            return (
+              <div
+                key={client.category}
+                className="glass-panel rounded-xl px-5 py-4 flex items-center gap-3.5 border border-gold/20"
+              >
+                <div className="w-9 h-9 rounded-lg bg-gold/10 border border-gold/25 flex items-center justify-center shrink-0">
+                  <Icon size={16} className="text-gold" />
+                </div>
+                <h4 className="font-display text-sm font-semibold text-gold-light">
+                  {client.category}
+                </h4>
+              </div>
+            );
+          })}
         </div>
       </div>
     </section>
   );
 }
-

@@ -84,11 +84,24 @@ export default function Home() {
 
       if (now >= LAUNCH_DATE_TIMESTAMP || forceCelebrate) {
         setIsLaunched(true);
-        // Show celebration during initial launch window (first 48h) or if testing with ?celebrate=true
-        const isRecentLaunch =
-          now < LAUNCH_DATE_TIMESTAMP + 48 * 60 * 60 * 1000;
-        if (isRecentLaunch || forceCelebrate) {
+
+        // Check if user has already opened the site and seen balloons on this device
+        let alreadyCelebrated = false;
+        try {
+          alreadyCelebrated =
+            localStorage.getItem("monica_celebrated") === "true";
+        } catch {}
+
+        if (forceCelebrate || !alreadyCelebrated) {
           setShowCelebration(true);
+          try {
+            localStorage.setItem("monica_celebrated", "true");
+          } catch {}
+
+          // Auto-dismiss after 4.5 seconds
+          setTimeout(() => {
+            setShowCelebration(false);
+          }, 4500);
         }
       }
     };

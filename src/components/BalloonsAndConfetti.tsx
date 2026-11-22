@@ -90,8 +90,22 @@ export default function BalloonsAndConfetti({
   const [balloons, setBalloons] = useState<BalloonData[]>([]);
   const [poppedBalloons, setPoppedBalloons] = useState<Set<number>>(new Set());
   const [showToast, setShowToast] = useState(true);
+  const [isExiting, setIsExiting] = useState(false);
 
-  // 1. Generate balloons
+  // Auto-dismiss after 4 seconds
+  useEffect(() => {
+    const exitTimer = setTimeout(() => {
+      setIsExiting(true);
+      const dismissTimer = setTimeout(() => {
+        onDismiss?.();
+      }, 500);
+      return () => clearTimeout(dismissTimer);
+    }, 4000);
+
+    return () => clearTimeout(exitTimer);
+  }, [onDismiss]);
+
+  // 1. Generate balloons (tuned for 4-second flight)
   useEffect(() => {
     const types: ("gold" | "champagne" | "pearl" | "bronze" | "rosegold")[] = [
       "gold",
@@ -102,27 +116,26 @@ export default function BalloonsAndConfetti({
     ];
 
     const generated: BalloonData[] = [];
-    // 20 balloons staggered across ~30 seconds
     const count = 22;
     for (let i = 0; i < count; i++) {
       generated.push({
         id: i,
         x: 6 + Math.random() * 88, // 6% to 94% horizontal
-        size: 75 + Math.random() * 45, // 75px to 120px
-        delay: i === 0 ? 0.1 : 0.2 + (i * 1.1) + Math.random() * 0.8,
-        duration: 9 + Math.random() * 5, // 9s to 14s rise time
-        swayDuration: 3 + Math.random() * 2,
-        swayDistance: 15 + Math.random() * 20,
+        size: 70 + Math.random() * 45, // 70px to 115px
+        delay: (i % 6) * 0.12 + Math.random() * 0.25, // launch right away
+        duration: 3.5 + Math.random() * 1.5, // 3.5s to 5s rise time
+        swayDuration: 1.5 + Math.random() * 1.2,
+        swayDistance: 12 + Math.random() * 16,
         type: types[i % types.length],
         scale: 0.85 + Math.random() * 0.35,
       });
     }
     setBalloons(generated);
 
-    // Auto-dismiss toast after 10 seconds
+    // Auto-dismiss toast with exit
     const toastTimer = setTimeout(() => {
       setShowToast(false);
-    }, 10000);
+    }, 3800);
 
     return () => clearTimeout(toastTimer);
   }, []);
@@ -291,7 +304,11 @@ export default function BalloonsAndConfetti({
   };
 
   return (
-    <div className="fixed inset-0 pointer-events-none z-[100] overflow-hidden">
+    <div
+      className={`fixed inset-0 pointer-events-none z-[100] overflow-hidden transition-opacity duration-500 ease-out ${
+        isExiting ? "opacity-0" : "opacity-100"
+      }`}
+    >
       {/* 1. Confetti Canvas */}
       <canvas ref={canvasRef} className="absolute inset-0 pointer-events-none z-10" />
 
@@ -455,3 +472,4 @@ export default function BalloonsAndConfetti({
     </div>
   );
 }
+
