@@ -7,23 +7,23 @@ import Image from "next/image";
 const locations = [
   {
     name: "Noida",
-    image: "/images/noida-welcome.jpg",
+    image: "/images/noida-welcome.webp",
     alt: "Noida city welcome arch with Buddha statue",
   },
   {
     name: "Greater Noida",
-    image: "/images/greater-noida.jpg",
+    image: "/images/greater-noida.webp",
     alt: "Greater Noida landmark sculptures",
   },
   {
     name: "Yamuna Expressway",
-    image: "/images/yamuna-expressway.jpg",
+    image: "/images/yamuna-expressway.webp",
     alt: "Noida International Airport development on Yamuna Expressway",
   },
   {
     name: "Dholera",
     label: "Greenfield Smart City",
-    image: "/images/dholera.jpg",
+    image: "/images/dholera.webp",
     alt: "Dholera Smart City commercial building",
   },
 ];

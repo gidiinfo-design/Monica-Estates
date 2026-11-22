@@ -8,25 +8,25 @@ const categories = [
   {
     title: "Industrial Properties",
     subtitle: "Factories & Warehouses",
-    images: ["/images/factory-warehouse.jpg", "/images/factory-warehouse-2.jpg"],
+    images: ["/images/factory-warehouse.webp", "/images/factory-warehouse-2.webp"],
     alt: ["Factory warehouse exterior", "Industrial warehouse building"],
   },
   {
     title: "Institutional Properties",
     subtitle: "Office & Institutional Buildings, Schools",
-    images: ["/images/institutional-building.jpg", "/images/institutional-office.jpg"],
+    images: ["/images/institutional-building.webp", "/images/institutional-office.webp"],
     alt: ["Institutional commercial building", "Office building exterior"],
   },
   {
     title: "IT & Office Space",
     subtitle: "Rental space for startups & IT companies, furnished or unfurnished",
-    images: ["/images/it-office.jpg", "/images/institutional-building.jpg"],
+    images: ["/images/it-office.webp", "/images/institutional-building.webp"],
     alt: ["IT office building", "Modern office space"],
   },
   {
     title: "Bulk Land & Buildings",
     subtitle: "From bare land to built-up",
-    images: ["/images/yamuna-expressway.jpg", "/images/noida-welcome.jpg"],
+    images: ["/images/yamuna-expressway.webp", "/images/noida-welcome.webp"],
     alt: ["Yamuna Expressway development area", "Noida city entrance"],
   },
 ];

@@ -8,63 +8,20 @@ import Footer from "@/components/Footer";
 import LaunchPage, { LAUNCH_DATE_TIMESTAMP } from "@/components/LaunchPage";
 import BalloonsAndConfetti from "@/components/BalloonsAndConfetti";
 
-// Dynamic imports for client components with animations
+// Dynamic imports for components that need client-only initialization
 const HeroSection = dynamic(() => import("@/components/HeroSection"), {
   ssr: false,
   loading: () => <div className="h-screen bg-bg-primary" />,
 });
 
-const AboutSection = dynamic(() => import("@/components/AboutSection"), {
-  ssr: false,
-  loading: () => <div className="h-96 bg-bg-primary" />,
-});
-
-const WhatWeDoSection = dynamic(() => import("@/components/WhatWeDoSection"), {
-  ssr: false,
-  loading: () => <div className="h-96 bg-bg-primary" />,
-});
-
-const WhereWeWorkSection = dynamic(
-  () => import("@/components/WhereWeWorkSection"),
-  {
-    ssr: false,
-    loading: () => <div className="h-96 bg-bg-primary" />,
-  }
-);
-
-const WhoWeServeSection = dynamic(
-  () => import("@/components/WhoWeServeSection"),
-  {
-    ssr: false,
-    loading: () => <div className="h-96 bg-bg-primary" />,
-  }
-);
-
-const LandPricesSection = dynamic(
-  () => import("@/components/LandPricesSection"),
-  {
-    ssr: false,
-    loading: () => <div className="h-96 bg-bg-primary" />,
-  }
-);
-
-const DholeraSection = dynamic(() => import("@/components/DholeraSection"), {
-  ssr: false,
-  loading: () => <div className="h-96 bg-bg-primary" />,
-});
-
-const RecentClientsSection = dynamic(
-  () => import("@/components/RecentClientsSection"),
-  {
-    ssr: false,
-    loading: () => <div className="h-96 bg-bg-primary" />,
-  }
-);
-
-const ContactSection = dynamic(() => import("@/components/ContactSection"), {
-  ssr: false,
-  loading: () => <div className="h-96 bg-bg-primary" />,
-});
+import AboutSection from "@/components/AboutSection";
+import WhatWeDoSection from "@/components/WhatWeDoSection";
+import WhereWeWorkSection from "@/components/WhereWeWorkSection";
+import WhoWeServeSection from "@/components/WhoWeServeSection";
+import LandPricesSection from "@/components/LandPricesSection";
+import DholeraSection from "@/components/DholeraSection";
+import RecentClientsSection from "@/components/RecentClientsSection";
+import ContactSection from "@/components/ContactSection";
 
 export default function Home() {
   const [isLaunched, setIsLaunched] = useState(false);

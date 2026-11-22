@@ -18,7 +18,7 @@ export default function DholeraSection() {
       {/* Background image */}
       <div className="absolute inset-0">
         <Image
-          src="/images/dholera.jpg"
+          src="/images/dholera.webp"
           alt="Dholera Smart City building"
           fill
           className="object-cover"

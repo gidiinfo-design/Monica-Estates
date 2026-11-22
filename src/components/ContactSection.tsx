@@ -82,7 +82,7 @@ export default function ContactSection() {
             </p>
             <div className="relative w-48 h-48 mx-auto mb-4 bg-white rounded-xl overflow-hidden">
               <Image
-                src="/images/dholera-whatsapp-qr.png"
+                src="/images/dholera-whatsapp-qr.webp"
                 alt="Scan to follow our Dholera WhatsApp channel"
                 fill
                 className="object-contain p-2"
