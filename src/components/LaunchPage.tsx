@@ -156,7 +156,7 @@ export default function LaunchPage({
           {/* Contact during pre-launch */}
           <div className="pt-6 space-y-4">
             <p className="text-muted text-sm font-display tracking-wider uppercase">
-              In the meantime, connect with Tushar Dewan directly
+              In the meantime, connect with Tushar Dewan & Rajan Dewan directly
             </p>
             <div className="flex flex-wrap gap-4 justify-center items-center">
               <a

@@ -16,7 +16,7 @@ export default function Footer() {
               Monica Estates
             </span>
             <p className="font-display text-gold-light text-lg font-semibold">
-              Tushar Dewan
+              Tushar Dewan & Rajan Dewan
             </p>
             <p className="font-display text-muted text-sm italic">
               Your Industrial Real Estate Advisor

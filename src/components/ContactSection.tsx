@@ -29,7 +29,7 @@ export default function ContactSection() {
           <p className="text-off-white/80 text-base md:text-lg max-w-2xl mx-auto leading-relaxed">
             Know anyone looking for industrial property? Introduce them to Monica
             Estates.{" "}
-            <span className="text-gold font-semibold">Tushar Dewan</span> is ready
+            <span className="text-gold font-semibold">Tushar Dewan & Rajan Dewan</span> are ready
             for all your questions.
           </p>
         </motion.div>

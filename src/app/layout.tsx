@@ -26,9 +26,9 @@ export const metadata: Metadata = {
   title:
     "Monica Estates — Industrial & Institutional Real Estate | Noida, Greater Noida, Dholera",
   description:
-    "44 years of Clients First. Monica Estates specialises in industrial, institutional, IT and office properties in Noida, Greater Noida, Yamuna Expressway and Dholera. Contact Tushar Dewan today.",
+    "44 years of Clients First. Monica Estates specialises in industrial, institutional, IT and office properties in Noida, Greater Noida, Yamuna Expressway and Dholera. Contact Tushar Dewan & Rajan Dewan today.",
   keywords:
-    "Monica Estates, industrial real estate Noida, institutional property Greater Noida, Yamuna Expressway land, Dholera Smart City, Tushar Dewan, factory warehouse, office space Noida",
+    "Monica Estates, industrial real estate Noida, institutional property Greater Noida, Yamuna Expressway land, Dholera Smart City, Tushar Dewan, Rajan Dewan, factory warehouse, office space Noida",
   openGraph: {
     title: "Monica Estates — 44 Years of Industrial Real Estate Excellence",
     description:
@@ -85,11 +85,18 @@ export default function RootLayout({
                 "Industrial and institutional real estate agents in Noida, Greater Noida, Yamuna Expressway and Dholera. 44 years of Clients First.",
               url: "https://monica-estates.vercel.app",
               telephone: "+919891075222",
-              founder: {
-                "@type": "Person",
-                name: "Tushar Dewan",
-                jobTitle: "Your Industrial Real Estate Advisor",
-              },
+              founder: [
+                {
+                  "@type": "Person",
+                  name: "Tushar Dewan",
+                  jobTitle: "Your Industrial Real Estate Advisor",
+                },
+                {
+                  "@type": "Person",
+                  name: "Rajan Dewan",
+                  jobTitle: "Your Industrial Real Estate Advisor",
+                },
+              ],
               areaServed: [
                 { "@type": "City", name: "Noida" },
                 { "@type": "City", name: "Greater Noida" },
