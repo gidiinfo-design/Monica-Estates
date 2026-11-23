@@ -19,7 +19,7 @@ const clientCategories = [
   { category: "School", icon: GraduationCap },
   { category: "Automobile Dealership", icon: Car },
   { category: "Garment Export", icon: Shirt },
-  { category: "Switches & Lighting", icon: Zap },
+  { category: "Lights & Switches Manufacturing", icon: Zap },
   { category: "Electrical Manufacturing", icon: Cpu },
   { category: "Chemical Manufacturing", icon: FlaskConical },
   { category: "Packaging & Corrugated Boxes", icon: Package },
