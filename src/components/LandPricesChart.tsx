@@ -31,8 +31,7 @@ export default function LandPricesChart({ data }: { data: PriceRow[] }) {
           axisLine={{ stroke: "rgba(201,162,75,0.2)" }}
         />
         <YAxis
-          scale="log"
-          domain={["auto", "auto"]}
+          domain={[0, "auto"]}
           stroke="#A39E93"
           tick={{ fill: "#A39E93", fontSize: 11 }}
           axisLine={{ stroke: "rgba(201,162,75,0.2)" }}
@@ -42,7 +41,7 @@ export default function LandPricesChart({ data }: { data: PriceRow[] }) {
             return value.toString();
           }}
           label={{
-            value: "₹ per sq m (log scale)",
+            value: "₹ per sq m",
             angle: -90,
             position: "insideLeft",
             style: { fill: "#A39E93", fontSize: 11 },
@@ -67,7 +66,7 @@ export default function LandPricesChart({ data }: { data: PriceRow[] }) {
           wrapperStyle={{ color: "#A39E93", fontSize: 12, paddingTop: 10 }}
         />
         <Line
-          type="monotone"
+          type="linear"
           dataKey="Noida"
           stroke="#7a9ec2"
           strokeWidth={2}
@@ -75,7 +74,7 @@ export default function LandPricesChart({ data }: { data: PriceRow[] }) {
           activeDot={{ r: 6 }}
         />
         <Line
-          type="monotone"
+          type="linear"
           dataKey="Gurugram"
           stroke="#c27a7a"
           strokeWidth={2}
@@ -83,7 +82,7 @@ export default function LandPricesChart({ data }: { data: PriceRow[] }) {
           activeDot={{ r: 6 }}
         />
         <Line
-          type="monotone"
+          type="linear"
           dataKey="Yamuna Expressway"
           stroke="#7ac28a"
           strokeWidth={2}
@@ -91,7 +90,7 @@ export default function LandPricesChart({ data }: { data: PriceRow[] }) {
           activeDot={{ r: 6 }}
         />
         <Line
-          type="monotone"
+          type="linear"
           dataKey="Dholera"
           stroke="#F5D77A"
           strokeWidth={3}
