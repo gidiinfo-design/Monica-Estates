@@ -78,6 +78,7 @@ export default function DholeraSection() {
           initial={{ opacity: 0, y: 20 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ delay: 0.5, duration: 0.7 }}
+          className="flex flex-col sm:flex-row items-center justify-center gap-4"
         >
           <a
             href="https://wa.me/919891075222?text=Hi%20Tushar%2C%20I%20am%20interested%20in%20Dholera%20properties."
@@ -87,6 +88,17 @@ export default function DholeraSection() {
           >
             <WhatsAppIcon size={22} />
             Enquire on WhatsApp
+          </a>
+          <a
+            href="https://dholeralothal.in"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 text-lg px-10 py-4 rounded border border-gold/60 text-gold hover:bg-gold/10 transition-colors duration-200 font-display tracking-wide"
+          >
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+              <circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
+            </svg>
+            More Info, Maps &amp; Pricing
           </a>
         </motion.div>
       </div>
